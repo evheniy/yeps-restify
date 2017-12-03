@@ -51,8 +51,8 @@ REST API request aggregate
     const app = new App();
     
     app.all([
-        error({ isJSON: true }),
-        logger(),
+      error({ isJSON: true }),
+      logger(),
     ]);
     
     app.then(restify());
@@ -96,8 +96,8 @@ REST API request aggregate
     const router = new Router();
     
     app.all([
-        error({ isJSON: true }),
-        logger(),
+      error({ isJSON: true }),
+      logger(),
     ]);
     
     router.get('/restify').then(restify());
