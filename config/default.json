@@ -1,0 +1,5 @@
+{
+  "restify": {
+    "restApiServerUri": "http://localhost:3000/"
+  }
+}
