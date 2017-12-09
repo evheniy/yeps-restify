@@ -151,18 +151,41 @@ REST API request aggregate
 ### Response
 
     {
-      "users": [
-        { "id": 1, "name": "User 1" },
-        { "id": 2, "name": "User 2" }
-      ],
-      "customer": {
-        "id": 1,
-        "name": "Customer 1"
+      "data": {
+        "users": [
+          { "id": 1, "name": "User 1" },
+          { "id": 2, "name": "User 2" }
+        ],
+        "customer": {
+          "id": 1,
+          "name": "Customer 1"
+        },
+        "countries": [
+          { "name": "Country 1" },
+          { "name": "Country 2" }
+        ]
+      }
+    }
+
+#### With error
+
+    {
+      "data": {
+        "users": [
+          { "id": 1, "name": "User 1" },
+          { "id": 2, "name": "User 2" }
+        ],
+        "customer": null,
+        "countries": [
+          { "name": "Country 1" },
+          { "name": "Country 2" }
+        ]
       },
-      "countries": [
-        { "name": "Country 1" },
-        { "name": "Country 2" }
-      ]
+      "error": {
+        "customer": {
+          "message": "Not Found"
+        }
+      }
     }
 
 #### [YEPS documentation](http://yeps.info/)

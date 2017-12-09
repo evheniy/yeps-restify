@@ -121,12 +121,12 @@ describe('YEPS restify http test', () => {
       .send()
       .then((res) => {
         expect(res).to.have.status(200);
-        expect(res.body.users).is.a('array');
-        expect(res.body.users.length).to.be.equal(2);
-        expect(res.body.users[0].id).to.be.equal(1);
-        expect(res.body.users[0].name).to.be.equal('User 1');
-        expect(res.body.users[1].id).to.be.equal(2);
-        expect(res.body.users[1].name).to.be.equal('User 2');
+        expect(res.body.data.users).is.a('array');
+        expect(res.body.data.users.length).to.be.equal(2);
+        expect(res.body.data.users[0].id).to.be.equal(1);
+        expect(res.body.data.users[0].name).to.be.equal('User 1');
+        expect(res.body.data.users[1].id).to.be.equal(2);
+        expect(res.body.data.users[1].name).to.be.equal('User 2');
         isTestFinished = true;
       });
 
@@ -144,12 +144,12 @@ describe('YEPS restify http test', () => {
       .send()
       .then((res) => {
         expect(res).to.have.status(200);
-        expect(res.body.customers).is.a('array');
-        expect(res.body.customers.length).to.be.equal(2);
-        expect(res.body.customers[0].id).to.be.equal(1);
-        expect(res.body.customers[0].name).to.be.equal('Customer 1');
-        expect(res.body.customers[1].id).to.be.equal(2);
-        expect(res.body.customers[1].name).to.be.equal('Customer 2');
+        expect(res.body.data.customers).is.a('array');
+        expect(res.body.data.customers.length).to.be.equal(2);
+        expect(res.body.data.customers[0].id).to.be.equal(1);
+        expect(res.body.data.customers[0].name).to.be.equal('Customer 1');
+        expect(res.body.data.customers[1].id).to.be.equal(2);
+        expect(res.body.data.customers[1].name).to.be.equal('Customer 2');
         isTestFinished = true;
       });
 
@@ -167,8 +167,8 @@ describe('YEPS restify http test', () => {
       .send()
       .then((res) => {
         expect(res).to.have.status(200);
-        expect(res.body.customer.id).to.be.equal(1);
-        expect(res.body.customer.name).to.be.equal('Customer 1');
+        expect(res.body.data.customer.id).to.be.equal(1);
+        expect(res.body.data.customer.name).to.be.equal('Customer 1');
         isTestFinished = true;
       });
 
@@ -186,12 +186,12 @@ describe('YEPS restify http test', () => {
       .send()
       .then((res) => {
         expect(res).to.have.status(200);
-        expect(res.body.countries).is.a('array');
-        expect(res.body.countries.length).to.be.equal(2);
-        expect(res.body.countries[0].id).to.be.equal(1);
-        expect(res.body.countries[0].name).to.be.equal('Country 1');
-        expect(res.body.countries[1].id).to.be.equal(2);
-        expect(res.body.countries[1].name).to.be.equal('Country 2');
+        expect(res.body.data.countries).is.a('array');
+        expect(res.body.data.countries.length).to.be.equal(2);
+        expect(res.body.data.countries[0].id).to.be.equal(1);
+        expect(res.body.data.countries[0].name).to.be.equal('Country 1');
+        expect(res.body.data.countries[1].id).to.be.equal(2);
+        expect(res.body.data.countries[1].name).to.be.equal('Country 2');
         isTestFinished = true;
       });
 
@@ -213,29 +213,29 @@ describe('YEPS restify http test', () => {
       .then((res) => {
         expect(res).to.have.status(200);
         // users
-        expect(res.body.users).is.a('array');
-        expect(res.body.users.length).to.be.equal(2);
-        expect(res.body.users[0].id).to.be.equal(1);
-        expect(res.body.users[0].name).to.be.equal('User 1');
-        expect(res.body.users[1].id).to.be.equal(2);
-        expect(res.body.users[1].name).to.be.equal('User 2');
+        expect(res.body.data.users).is.a('array');
+        expect(res.body.data.users.length).to.be.equal(2);
+        expect(res.body.data.users[0].id).to.be.equal(1);
+        expect(res.body.data.users[0].name).to.be.equal('User 1');
+        expect(res.body.data.users[1].id).to.be.equal(2);
+        expect(res.body.data.users[1].name).to.be.equal('User 2');
         // customers
-        expect(res.body.customers).is.a('array');
-        expect(res.body.customers.length).to.be.equal(2);
-        expect(res.body.customers[0].id).to.be.equal(1);
-        expect(res.body.customers[0].name).to.be.equal('Customer 1');
-        expect(res.body.customers[1].id).to.be.equal(2);
-        expect(res.body.customers[1].name).to.be.equal('Customer 2');
+        expect(res.body.data.customers).is.a('array');
+        expect(res.body.data.customers.length).to.be.equal(2);
+        expect(res.body.data.customers[0].id).to.be.equal(1);
+        expect(res.body.data.customers[0].name).to.be.equal('Customer 1');
+        expect(res.body.data.customers[1].id).to.be.equal(2);
+        expect(res.body.data.customers[1].name).to.be.equal('Customer 2');
         // customer
-        expect(res.body.customer.id).to.be.equal(1);
-        expect(res.body.customer.name).to.be.equal('Customer 1');
+        expect(res.body.data.customer.id).to.be.equal(1);
+        expect(res.body.data.customer.name).to.be.equal('Customer 1');
         // countries
-        expect(res.body.countries).is.a('array');
-        expect(res.body.countries.length).to.be.equal(2);
-        expect(res.body.countries[0].id).to.be.equal(1);
-        expect(res.body.countries[0].name).to.be.equal('Country 1');
-        expect(res.body.countries[1].id).to.be.equal(2);
-        expect(res.body.countries[1].name).to.be.equal('Country 2');
+        expect(res.body.data.countries).is.a('array');
+        expect(res.body.data.countries.length).to.be.equal(2);
+        expect(res.body.data.countries[0].id).to.be.equal(1);
+        expect(res.body.data.countries[0].name).to.be.equal('Country 1');
+        expect(res.body.data.countries[1].id).to.be.equal(2);
+        expect(res.body.data.countries[1].name).to.be.equal('Country 2');
         isTestFinished = true;
       });
 
@@ -257,29 +257,29 @@ describe('YEPS restify http test', () => {
       .then((res) => {
         expect(res).to.have.status(200);
         // users
-        expect(res.body.users).is.a('array');
-        expect(res.body.users.length).to.be.equal(2);
-        expect(res.body.users[0].id).to.be.equal(1);
-        expect(res.body.users[0].name).to.be.equal('User 1');
-        expect(res.body.users[1].id).to.be.equal(2);
-        expect(res.body.users[1].name).to.be.equal('User 2');
+        expect(res.body.data.users).is.a('array');
+        expect(res.body.data.users.length).to.be.equal(2);
+        expect(res.body.data.users[0].id).to.be.equal(1);
+        expect(res.body.data.users[0].name).to.be.equal('User 1');
+        expect(res.body.data.users[1].id).to.be.equal(2);
+        expect(res.body.data.users[1].name).to.be.equal('User 2');
         // customers
-        expect(res.body.customers).is.a('array');
-        expect(res.body.customers.length).to.be.equal(2);
-        expect(res.body.customers[0].id).to.be.equal(1);
-        expect(res.body.customers[0].name).to.be.equal('Customer 1');
-        expect(res.body.customers[1].id).to.be.equal(2);
-        expect(res.body.customers[1].name).to.be.equal('Customer 2');
+        expect(res.body.data.customers).is.a('array');
+        expect(res.body.data.customers.length).to.be.equal(2);
+        expect(res.body.data.customers[0].id).to.be.equal(1);
+        expect(res.body.data.customers[0].name).to.be.equal('Customer 1');
+        expect(res.body.data.customers[1].id).to.be.equal(2);
+        expect(res.body.data.customers[1].name).to.be.equal('Customer 2');
         // customer
-        expect(res.body.customer).is.null;
+        expect(res.body.data.customer).is.null;
         expect(res.body.error.customer.message).to.be.equal(STATUS_CODES[404]);
         // countries
-        expect(res.body.countries).is.a('array');
-        expect(res.body.countries.length).to.be.equal(2);
-        expect(res.body.countries[0].id).to.be.equal(1);
-        expect(res.body.countries[0].name).to.be.equal('Country 1');
-        expect(res.body.countries[1].id).to.be.equal(2);
-        expect(res.body.countries[1].name).to.be.equal('Country 2');
+        expect(res.body.data.countries).is.a('array');
+        expect(res.body.data.countries.length).to.be.equal(2);
+        expect(res.body.data.countries[0].id).to.be.equal(1);
+        expect(res.body.data.countries[0].name).to.be.equal('Country 1');
+        expect(res.body.data.countries[1].id).to.be.equal(2);
+        expect(res.body.data.countries[1].name).to.be.equal('Country 2');
         isTestFinished = true;
       });
 

@@ -56,7 +56,8 @@ module.exports = () => async (ctx) => {
 
   return Promise.all(requests).then((data) => {
     data.forEach((item, i) => {
-      response[resources[i]] = item || null;
+      response.data = response.data || {};
+      response.data[resources[i]] = item || null;
     });
 
     debug('Response:');
